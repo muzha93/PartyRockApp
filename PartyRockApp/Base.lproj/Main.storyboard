@@ -51,7 +51,7 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="87" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="LPB-2f-Nyo">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="87" id="Lsh-U3-7FQ">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="87" id="Lsh-U3-7FQ" customClass="PartyCell" customModule="PartyRockApp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="87"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Lsh-U3-7FQ" id="6eK-El-TCA">
@@ -82,6 +82,10 @@
                                                 <constraint firstItem="wQs-j0-ct3" firstAttribute="centerY" secondItem="6eK-El-TCA" secondAttribute="centerY" id="yVb-2R-UoO"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="videoPreviewImage" destination="Mo8-am-0p6" id="jAE-Nj-kho"/>
+                                            <outlet property="videoTitle" destination="wQs-j0-ct3" id="i9Q-A0-Nj2"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -127,7 +131,7 @@
                                 </constraints>
                             </webView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.84916322969543145" green="0.84916322969543145" blue="0.84916322969543145" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="6sn-Uf-lua" firstAttribute="leading" secondItem="vLw-ys-DPq" secondAttribute="leading" id="M4H-OY-7SF"/>
                             <constraint firstItem="6sn-Uf-lua" firstAttribute="top" secondItem="vLw-ys-DPq" secondAttribute="top" id="a0z-zQ-jAT"/>

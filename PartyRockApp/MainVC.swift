@@ -9,13 +9,18 @@
 import UIKit
 
 class MainVC: UIViewController {
-
+    
+    @IBOutlet weak var tableView: UITableView!
+    
+    var partyRocks = [PartyRock]()
+    
     override func viewDidLoad() {
+        
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }
 
-
+    
 
 
 }
