@@ -16,8 +16,8 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let p1 = PartyRock(imageURL: "http://i44.tinypic.com/vwwj69.jpg", videoURL: "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/t7hL0LrmBj8\" frameborder=\"0\" allowfullscreen></iframe>", videoTitle: "Smoke some weed")
-        let p2 = PartyRock(imageURL: "http://i41.tinypic.com/okcz1t.jpg", videoURL: "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/t7hL0LrmBj8\" frameborder=\"0\" allowfullscreen></iframe>", videoTitle: "Smoke some weed")
+        let p1 = PartyRock(imageURL: "http://i44.tinypic.com/vwwj69.jpg", videoURL: "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/rjm6m-PVVNk\" frameborder=\"0\" allowfullscreen></iframe>", videoTitle: "Smoke some weed")
+        let p2 = PartyRock(imageURL: "http://i41.tinypic.com/okcz1t.jpg", videoURL: "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/TN4oqkR648k\" frameborder=\"0\" allowfullscreen></iframe>", videoTitle: "Gheetooo")
         let p3 = PartyRock(imageURL: "http://i39.tinypic.com/257elut.jpg", videoURL: "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/t7hL0LrmBj8\" frameborder=\"0\" allowfullscreen></iframe>", videoTitle: "Smoke some weed")
         let p4 = PartyRock(imageURL: "http://i43.tinypic.com/4vqtj6.jpg", videoURL: "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/t7hL0LrmBj8\" frameborder=\"0\" allowfullscreen></iframe>", videoTitle: "Smoke some weed")
         let p5 = PartyRock(imageURL: "http://i66.tinypic.com/1zlrb6h.jpg", videoURL: "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/t7hL0LrmBj8\" frameborder=\"0\" allowfullscreen></iframe>", videoTitle: "Smoke some weed")
@@ -37,14 +37,29 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             
             let partyRock = partyRocks[indexPath.row]
             cell.updateUI(partyRock: partyRock)
+            return cell
+            
         } else {
             return UITableViewCell()
         }
-        return UITableViewCell()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return partyRocks.count
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let partyRock = partyRocks[indexPath.row]
+        performSegue(withIdentifier: "VideoVC", sender: partyRock)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destination = segue.destination as? VideoVC {
+            
+            if let party = sender as? PartyRock {
+                destination.partyRock = party
+            }
+        }
     }
 
 }

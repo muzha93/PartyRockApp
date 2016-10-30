@@ -21,6 +21,8 @@ class PartyCell: UITableViewCell {
     
     func updateUI (partyRock: PartyRock) {
         videoTitle.text = partyRock.videoTitle
+        
+
         //todo za sliku jos moras
         // when downloading from internet asynchronous thread
         let url = URL(string: partyRock.imageURL)!
